@@ -15,4 +15,11 @@ DROP ROLE amigoscode;
 # + fastest development
 # - delays in access time
 #
-#
+
+# Sring Beans
+# Annotations
+# @Configuration - class is configuration
+# @Service - class provides something, some service
+# @Component - class is used by Spring but there are no clearly defined goals
+
+
