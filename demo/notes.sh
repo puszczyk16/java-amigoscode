@@ -10,13 +10,13 @@ GRANT ALL PRIVILEGES ON DATABASE "student" TO amigoscode;
 
 DROP ROLE amigoscode;
 
-# Hibernate is one othe most known implementation of the JPA (Java Persistence API)
+# Hibernate is one of the most known implementation of the JPA (Java Persistence API)
 # Framework responds for easier communication with databases
 # + fastest development
 # - delays in access time
 #
 
-# Sring Beans
+# Spring Beans
 # Annotations
 # @Configuration - class is configuration
 # @Service - class provides something, some service
