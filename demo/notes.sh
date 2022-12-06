@@ -21,5 +21,6 @@ DROP ROLE amigoscode;
 # @Configuration - class is configuration
 # @Service - class provides something, some service
 # @Component - class is used by Spring but there are no clearly defined goals
+# @ComponentScan - tells the Spring in what location looks for components
 
 
