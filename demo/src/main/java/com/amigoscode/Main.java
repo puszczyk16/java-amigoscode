@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Objects;
 
 @SpringBootApplication
@@ -20,8 +21,27 @@ public class Main {
 
     @GetMapping("/greet1")
     public GreetResponse blala() {
-        return new GreetResponse("Hello1");
+        GreetResponse response = new GreetResponse(
+                "Hello1",
+                List.of("Java", "Golang", "Python"),
+                new Person("Alan", 29, 30_000)
+        );
+        return response;
     }
+
+    record Person(
+            String name,
+            int age,
+            double savings
+    ){}
+
+    record GreetResponse (
+        String greet,
+        List<String> favProgrammingLanguages,
+        Person person
+        ) {}
+
+
     //records are classes that allow to achieve immutability
     //equivalent class to record below is
     /*
@@ -54,5 +74,5 @@ public class Main {
 
     }
     */
-    record GreetResponse(String greet) {}
+
 }
