@@ -1,14 +1,9 @@
-# PSQL
+# Postgres run for vagrant vm with docker-compose port 5332
+PGPASSWORD=password psql -p 5332 -U amigoscode
+
 \l
 \du
-CREATE DATABASE student
-
-CREATE ROLE amigoscode WITH LOGIN ENCRYPTED PASSWORD 'password';
-
-GRANT ALL PRIVILEGES ON DATABASE "student" TO postgres;
-GRANT ALL PRIVILEGES ON DATABASE "student" TO amigoscode;
-
-DROP ROLE amigoscode;
+CREATE DATABASE customer;
 
 # Hibernate is one of the most known implementation of the JPA (Java Persistence API)
 # Framework responds for easier communication with databases
