@@ -4,75 +4,23 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Objects;
 
 @SpringBootApplication
-//@ComponentScan(basePackages = "com.amigoscode")
-//@EnableAutoConfiguration
 @RestController
+@RequestMapping("api/v1/customers")
 public class Main {
     public static void main(String[] args) {
         // args is anything that comes from commandline
         SpringApplication.run(Main.class, args);
     }
-
-    @GetMapping("/greet1")
-    public GreetResponse blala() {
-        GreetResponse response = new GreetResponse(
-                "Hello1",
-                List.of("Java", "Golang", "Python"),
-                new Person("Alan", 29, 30_000)
-        );
-        return response;
+    @GetMapping
+    public List<Customer> getCustomers() {
+     return List.of();
     }
-
-    record Person(
-            String name,
-            int age,
-            double savings
-    ){}
-
-    record GreetResponse (
-        String greet,
-        List<String> favProgrammingLanguages,
-        Person person
-        ) {}
-
-
-    //records are classes that allow to achieve immutability
-    //equivalent class to record below is
-    /*
-    class GreetResponse {
-        private final String greet;
-        public GreetResponse(String bla) {
-            this.greet = bla;
-        }
-        public String getGreet() {
-            return greet;
-        }
-        @Override
-        public String toString() {
-            return "GreetResponse{" +
-                    "greet='" + greet + '\'' +
-                    '}';
-        }
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            GreetResponse that = (GreetResponse) o;
-            return Objects.equals(greet, that.greet);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(greet);
-        }
-
-    }
-    */
 
 }
