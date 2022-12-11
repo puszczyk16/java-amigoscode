@@ -14,13 +14,18 @@ import java.util.Objects;
 @RestController
 @RequestMapping("api/v1/customers")
 public class Main {
+
+    private final CustomerRepository customerRepository;
+    public Main(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
     public static void main(String[] args) {
         // args is anything that comes from commandline
         SpringApplication.run(Main.class, args);
     }
     @GetMapping
     public List<Customer> getCustomers() {
-     return List.of();
+     return customerRepository.findAll();
     }
 
 }

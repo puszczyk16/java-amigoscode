@@ -5,6 +5,12 @@ PGPASSWORD=password psql -p 5332 -U amigoscode
 \du
 CREATE DATABASE customer;
 
+
+# SQL inserts
+insert into customer(id, name, email, age) values (nextval('customer_id_sequence'), 'Alex', 'alex@gmail.com', 22)
+
+INSERT INTO CUSTOMER(id, name, email, age) VALUES (nextval('customer_id_sequence'), 'Dżesika', 'jes@gmail.com', 44)
+
 # Hibernate is one of the most known implementation of the JPA (Java Persistence API)
 # Framework responds for easier communication with databases
 # + fastest development
